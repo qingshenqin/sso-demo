@@ -1,0 +1,13 @@
+security:
+  oauth2:
+    client:
+      client-id: xgjk1
+      client-secret: xgjkSecret1
+      user-authorization-uri: http://127.0.0.1:9999/server/oauth/authorize #认证的地址
+      access-token-uri:  http://127.0.0.1:9999/server/oauth/token
+    resource:
+      jwt:
+        key-uri: http://127.0.0.1:9999/server/oauth/token_key
+server:
+  port: 8080
+  context-path: /client1
