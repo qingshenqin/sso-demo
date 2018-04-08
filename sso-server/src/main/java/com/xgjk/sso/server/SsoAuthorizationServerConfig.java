@@ -14,6 +14,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Configuration
 @EnableAuthorizationServer
 public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
+//    哪些客户端是我认证服务器认为安全的
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
@@ -50,7 +51,7 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
         return new JwtTokenStore(jwtAccessTokenConverter());
     }
 
-    //签名，令牌的增强器
+    //jwt签名，令牌的增强器，转换器
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();

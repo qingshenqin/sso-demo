@@ -105,3 +105,10 @@ out
 gen
 .gitignore
 .idea/
+src/
+sso-client01/src/test/
+sso-client01/target/generated-sources/
+sso-client02/src/test/
+sso-client02/target/generated-sources/
+sso-server/src/test/
+sso-server/target/generated-sources/

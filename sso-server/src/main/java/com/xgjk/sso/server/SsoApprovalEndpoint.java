@@ -8,7 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-// 授权的改造，把表单改造
+/* 授权的改造，把表单改造
+本质上改造这个WhitelabelApprovalEndpoint类，此类有@FrameworkEndpoint，接收/oauth/confirm_access这个路由，这个是授权页面的产生的路由。要更改请求授权的路由，这个很难改。
+能做的就是先处理这个路由，@RestController优先处理这个路由，WhitelabelApprovalEndpoint就不生效了。简单的办法是copy一份WhitelabelApprovalEndpoint里面的源码，屏蔽掉内容，自动提交
+ */
 @RestController
 @SessionAttributes("authorizationRequest")
 public class SsoApprovalEndpoint {
